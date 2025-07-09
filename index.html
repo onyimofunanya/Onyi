@@ -40,6 +40,23 @@
             opacity: 0.9;
         }
 
+        /* Profile Picture Styling */
+        .profile-pic-container {
+            margin-top: 30px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Makes it a circle */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            border: 5px solid #3f6e9f; /* A border matching Salesforce blue */
+            box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Soft shadow */
+            transition: transform 0.3s ease;
+        }
+        .profile-pic:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
         /* Navigation - Beyond Responsive (JS for active states) */
         nav {
             background-color: #34495e; /* Slightly lighter blue/grey */
@@ -258,237 +275,4 @@
             h2 {
                 font-size: 1.8em;
             }
-        }
-
-        /* Even smaller screens (e.g., mobile landscape) */
-        @media (max-width: 480px) {
-            nav ul li a {
-                font-size: 0.9em;
-                padding: 6px 10px;
-            }
-            .skill-bubble {
-                font-size: 0.9em;
-                padding: 8px 15px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>[Your Full Name]</h1>
-            <p>Senior Salesforce Project Manager</p>
-            <p>Driving Success in Complex Ecosystems</p>
-        </div>
-    </header>
-
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about" class="active">About Me</a></li>
-                <li><a href="#capabilities">Core Capabilities</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#future-projects">Future Endeavors</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>As a **highly accomplished and professional Salesforce Senior Project Manager**, I bring over [X] years of dedicated experience leading complex, enterprise-level CRM implementations and digital transformation initiatives. My expertise is deeply rooted in the **Salesforce ecosystem**, where I excel at bridging the gap between business objectives and technical realities.</p>
-            <p>I have a proven track record of delivering projects on time, within budget, and to the highest quality standards, consistently exceeding stakeholder expectations. My approach is characterized by meticulous planning, proactive risk management, clear communication, and a steadfast commitment to fostering collaborative team environments. I thrive in dynamic environments, leveraging agile methodologies and my strong leadership skills to navigate challenges and drive successful outcomes.</p>
-        </section>
-        ---
-        <section id="capabilities">
-            <h2>Core Capabilities</h2>
-            <div class="capabilities-grid">
-                <div class="capability-item">
-                    <h3>Strategic Salesforce Leadership</h3>
-                    <p>Expert in aligning Salesforce strategies with business goals, driving vision from conception to successful deployment across various clouds (Sales, Service, Experience, Financial Services Cloud).</p>
-                </div>
-                <div class="capability-item">
-                    <h3>Complex Program Management</h3>
-                    <p>Proficient in managing large-scale, multi-stream projects with intricate dependencies and diverse stakeholder groups, ensuring cohesive project execution.</p>
-                </div>
-                <div class="capability-item">
-                    <h3>nCino Implementation Mastery</h3>
-                    <p>Deep understanding and practical experience in leading successful nCino implementations, navigating its specific complexities and integrations for financial services clients.</p>
-                </div>
-                <div class="capability-item">
-                    <h3>Agile & Waterfall Methodologies</h3>
-                    <p>Adaptable and certified in both Agile (Scrum, Kanban) and Waterfall methodologies, selecting and applying the most effective approach for each unique project context.</p>
-                </div>
-                <div class="capability-item">
-                    <h3>Risk Management & Mitigation</h3>
-                    <p>Proactive identification, assessment, and mitigation of project risks, ensuring minimal disruption and consistent progress.</p>
-                </div>
-                <div class="capability-item">
-                    <h3>Stakeholder Engagement & Communication</h3>
-                    <p>Exceptional ability to engage, manage, and communicate effectively with executives, technical teams, and end-users, fostering trust and transparency.</p>
-                </div>
-            </div>
-        </section>
-        ---
-        <section id="projects">
-            <h2>Key Projects Delivered</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>AI-Driven Salesforce Adoption Initiatives</h3>
-                    <div class="project-content">
-                        <p>Successfully led initiatives leveraging **Salesforce Einstein AI and Generative AI** to enhance user adoption, automate routine tasks, and provide predictive analytics for CRM users within a large enterprise.</p>
-                        <p><strong>Impact:</strong> Achieved a 20% improvement in user engagement and 10% reduction in manual data entry through intelligent automation.</p>
-                        <ul>
-                            <li>Salesforce Einstein</li>
-                            <li>Generative AI</li>
-                            <li>User Adoption Strategies</li>
-                            <li>Process Optimization</li>
-                            <li>Data Science Principles</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>nCino Loan Origination Platform Implementation</h3>
-                    <div class="project-content">
-                        <p>Successfully managed the end-to-end implementation of **nCino's Commercial Loan Origination** platform for a regional bank, automating key lending processes and improving compliance.</p>
-                        <p><strong>Impact:</strong> Reduced loan processing time by 30% and improved regulatory audit readiness.</p>
-                        <ul>
-                            <li>nCino Loan Origination</li>
-                            <li>Financial Services Cloud</li>
-                            <li>Process Automation</li>
-                            <li>Vendor Management</li>
-                            <li>Regulatory Compliance</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Salesforce Service Cloud & CTI Integration</h3>
-                    <div class="project-content">
-                        <p>Directed the implementation of **Salesforce Service Cloud** including advanced CTI (Computer Telephony Integration) for a customer support center, enhancing agent productivity and customer satisfaction.</p>
-                        <p><strong>Impact:</strong> Decreased average handle time by 20% and increased CSAT scores by 10 points.</p>
-                        <ul>
-                            <li>Salesforce Service Cloud</li>
-                            <li>CTI Integration</li>
-                            <li>Omni-Channel</li>
-                            <li>Call Center Operations</li>
-                            <li>Performance Metrics</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        ---
-        <section id="future-projects">
-            <h2>Future Portfolio Projects & Strategic Interests</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Cross-Cloud Salesforce Program Leadership</h3>
-                    <div class="project-content">
-                        <p>Aiming to lead large-scale programs that span multiple Salesforce Clouds (e.g., Marketing Cloud, Health Cloud, Commerce Cloud) to create a truly unified 360-degree customer view for complex organizations.</p>
-                        <p class="project-status">**Status:** Skill Enhancement & Networking</p>
-                        <ul>
-                            <li>Salesforce Multi-Cloud</li>
-                            <li>Program Governance</li>
-                            <li>Enterprise Architecture</li>
-                            <li>Data Unification</li>
-                            <li>Strategic Roadmapping</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        ---
-        <section id="skills">
-            <h2>Skills & Expertise</h2>
-            <div class="skills-container">
-                <h3>Salesforce Ecosystem:</h3>
-                <div class="skills-grid">
-                    <span class="skill-bubble salesforce">Sales Cloud</span>
-                    <span class="skill-bubble salesforce">Service Cloud</span>
-                    <span class="skill-bubble salesforce">Experience Cloud</span>
-                    <span class="skill-bubble salesforce">Financial Services Cloud (FSC)</span>
-                    <span class="skill-bubble salesforce">Salesforce CPQ</span>
-                    <span class="skill-bubble salesforce">Pardot / Marketing Cloud</span>
-                    <span class="skill-bubble salesforce">Integrations (MuleSoft, APIs)</span>
-                    <span class="skill-bubble salesforce">Salesforce Lightning</span>
-                    <span class="skill-bubble salesforce">Platform Governance</span>
-                </div>
-                <h3 style="margin-top: 40px;">nCino Platform:</h3>
-                <div class="skills-grid">
-                    <span class="skill-bubble ncino">nCino Loan Origination System</span>
-                    <span class="skill-bubble ncino">nCino Treasury Management</span>
-                    <span class="skill-bubble ncino">nCino Deposit Account Opening</span>
-                    <span class="skill-bubble ncino">nCino Configuration</span>
-                    <span class="skill-bubble ncino">nCino Release Management</span>
-                </div>
-                <h3 style="margin-top: 40px;">Project Management & Methodologies:</h3>
-                <div class="skills-grid">
-                    <span class="skill-bubble pm">PMP Certified</span>
-                    <span class="skill-bubble pm">Agile (Scrum Master)</span>
-                    <span class="skill-bubble pm">Waterfall Methodology</span>
-                    <span class="skill-bubble pm">Risk Management</span>
-                    <span class="skill-bubble pm">Budget Management</span>
-                    <span class="skill-bubble pm">Resource Management</span>
-                    <span class="skill-bubble pm">Stakeholder Management</span>
-                    <span class="skill-bubble pm">Change Management</span>
-                    <span class="skill-bubble pm">Vendor Management</span>
-                    <span class="skill-bubble pm">Jira, Asana, Azure DevOps</span>
-                </div>
-                <h3 style="margin-top: 40px;">Leadership & Soft Skills:</h3>
-                <div class="skills-grid">
-                    <span class="skill-bubble">Strategic Planning</span>
-                    <span class="skill-bubble">Cross-Functional Leadership</span>
-                    <span class="skill-bubble">Problem Solving</span>
-                    <span class="skill-bubble">Conflict Resolution</span>
-                    <span class="skill-bubble">Mentoring & Coaching</span>
-                    <span class="skill-bubble">Exceptional Communication</span>
-                </div>
-            </div>
-        </section>
-        ---
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p style="text-align: center;">I'm always open to discussing new opportunities or collaborating on challenging Salesforce and nCino initiatives. Please feel free to reach out!</p>
-            <p style="text-align: center; font-size: 1.2em; font-weight: bold;">
-                Email: <a href="mailto:your.email@example.com">your.email@example.com</a><br>
-                LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a><br>
-                (Optional) Phone: [Your Phone Number]
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 [Your Name]. All rights reserved. | Built with a focus on Salesforce Project Management Excellence.</p>
-        </div>
-    </footer>
-
-    <script>
-        // JavaScript for sticky navigation active state (Beyond basic responsiveness)
-        document.addEventListener("DOMContentLoaded", function() {
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll("nav ul li a");
-
-            window.addEventListener("scroll", () => {
-                let current = "";
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 80; // Adjust for sticky header
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                        current = section.getAttribute("id");
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href").includes(current)) {
-                        link.classList.add("active");
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+            .profile-pic
