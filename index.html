@@ -1,403 +1,594 @@
-/* General Body and Container Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header Section */
-.header {
-    background: #2c3e50; /* Dark blue-grey */
-    color: #fff;
-    padding: 40px 0;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.profile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.profile-info h1 {
-    margin: 10px 0 5px;
-    font-size: 2.5em;
-    font-weight: 700;
-}
-
-.profile-info .role {
-    font-size: 1.3em;
-    font-weight: 400;
-    color: #ecf0f1; /* Light grey */
-    margin-bottom: 10px;
-}
-
-.profile-info .tagline {
-    font-size: 1.1em;
-    color: #bdc3c7; /* Lighter grey */
-}
-
-.nav ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allows nav items to wrap on smaller screens */
-    gap: 25px; /* Space between nav items */
-}
-
-.nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1em;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav ul li a:hover,
-.nav ul li a:focus {
-    background-color: #34495e; /* Slightly darker blue-grey */
-    color: #fff;
-}
-
-/* Section Styling */
-.section {
-    padding: 60px 0;
-    border-bottom: 1px solid #ddd;
-    background-color: #fff;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.section:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-.section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.2em;
-    color: #2c3e50;
-    position: relative;
-}
-
-.section h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #3498db; /* Blue accent */
-    margin: 10px auto 0;
-}
-
-/* About Me Section */
-.about-me p {
-    text-align: justify;
-    margin-bottom: 15px;
-    font-size: 1.05em;
-    line-height: 1.7;
-}
-
-/* Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.skill-category {
-    background-color: #f9f9f9;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-}
-
-.skill-category:hover {
-    transform: translateY(-5px);
-}
-
-.skill-category h3 {
-    color: #3498db;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.4em;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 10px;
-}
-
-.skill-category ul {
-    list-style: none;
-    padding: 0;
-}
-
-.skill-category ul li {
-    padding: 8px 0;
-    border-bottom: 1px dashed #eee;
-    font-size: 0.95em;
-}
-
-.skill-category ul li:last-child {
-    border-bottom: none;
-}
-
-/* Projects Section */
-.project-card {
-    background-color: #f9f9f9;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-.project-card h3 {
-    color: #2c3e50;
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 10px;
-}
-
-.project-card .project-tags {
-    font-style: italic;
-    color: #555;
-    margin-bottom: 15px;
-    font-size: 0.95em;
-}
-
-.project-card h4 {
-    color: #3498db;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
-
-.project-card p, .project-card ul {
-    margin-bottom: 15px;
-    text-align: justify;
-}
-
-.project-card ul {
-    list-style: disc;
-    margin-left: 20px;
-}
-
-.project-card ul li {
-    margin-bottom: 8px;
-}
-
-/* Capabilities Section */
-.capabilities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.capability-item {
-    background-color: #f9f9f9;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    transition: transform 0.2s ease;
-}
-
-.capability-item:hover {
-    transform: translateY(-5px);
-}
-
-.capability-item h3 {
-    color: #2c3e50;
-    font-size: 1.4em;
-    margin-top: 0;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.capability-item h3 i {
-    color: #3498db;
-    margin-right: 10px;
-    font-size: 1.5em;
-}
-
-.capability-item ul {
-    list-style: none;
-    padding: 0;
-}
-
-.capability-item ul li {
-    padding: 5px 0;
-    font-size: 0.95em;
-    color: #555;
-}
-
-
-/* Footer Section */
-.footer {
-    background: #34495e; /* Darker blue-grey */
-    color: #fff;
-    padding: 40px 0;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.footer h2 {
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-
-.footer p {
-    margin-bottom: 15px;
-}
-
-.contact-info p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-.contact-info p i {
-    margin-right: 10px;
-    color: #3498db;
-}
-
-.contact-info a {
-    color: #ecf0f1;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-info a:hover {
-    color: #3498db;
-    text-decoration: underline;
-}
-
-.social-links {
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
-.social-links a {
-    color: #fff;
-    margin: 0 15px;
-    font-size: 1.8em;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #3498db;
-}
-
-.copyright {
-    font-size: 0.9em;
-    color: #bdc3c7;
-    margin-top: 30px;
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header {
-        padding: 30px 0;
-    }
-
-    .profile-info h1 {
-        font-size: 2em;
-    }
-
-    .profile-info .role {
-        font-size: 1.1em;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav ul li a {
-        padding: 10px 20px;
-        display: block;
-    }
-
-    .section {
-        padding: 40px 15px;
-    }
-
-    .section h2 {
-        font-size: 1.8em;
-    }
-
-    .skills-grid,
-    .capabilities-grid {
-        grid-template-columns: 1fr; /* Stack columns on small screens */
-    }
-
-    .project-card {
-        padding: 20px;
-    }
-
-    .project-card h3 {
-        font-size: 1.5em;
-    }
-
-    .footer {
-        padding: 30px 15px;
-    }
-
-    .contact-info p {
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .profile-pic {
-        width: 120px;
-        height: 120px;
-    }
-
-    .profile-info h1 {
-        font-size: 1.8em;
-    }
-
-    .profile-info .role {
-        font-size: 1em;
-    }
-
-    .section h2 {
-        font-size: 1.6em;
-    }
-}
+Here's a cool and responsive HTML portfolio template for a Salesforce Senior Project Manager, incorporating your profile picture and highlighting key capabilities and future project areas.
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Senior Project Manager - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0070D2; /* Salesforce Blue */
+            --secondary-color: #16325C; /* Darker Blue */
+            --accent-color: #B0E0E6; /* Light Blue */
+            --text-color: #333;
+            --light-grey: #f4f4f4;
+            --white: #ffffff;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-grey);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -70px;
+            right: -70px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .profile-picture {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* About & Capabilities */
+        #about, #capabilities {
+            background-color: var(--white);
+            padding-top: 80px;
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .capability-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .capability-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .capability-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        .capability-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .capability-item ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: #444;
+        }
+
+        .capability-item ul li::before {
+            content: '✔️';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.1em;
+            top: 0;
+        }
+
+        /* Projects */
+        #projects {
+            background-color: var(--light-grey);
+            padding-bottom: 80px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card-header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+        }
+
+        .project-card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .project-card-body p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .project-card-skills span {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .coming-soon-badge {
+            background-color: #ffc107; /* Amber */
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .hero h2 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .profile-picture {
+                width: 150px;
+                height: 150px;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            .capabilities-grid, .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .capability-item {
+                padding: 25px;
+            }
+
+            .project-card-header {
+                font-size: 1.3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .hero h2 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 0.9em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+
+            .capability-item h3 {
+                font-size: 1.2em;
+            }
+
+            .project-card-header {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Your Name Here</h1>
+            <p>Salesforce Senior Project Manager</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="Profile picture.jpeg" alt="Profile Picture" class="profile-picture">
+            <h2>Driving Success in Complex Salesforce Ecosystems</h2>
+            <p>Leveraging deep expertise in Salesforce and nCino to deliver transformative projects and exceed client expectations through exceptional project leadership.</p>
+            <a href="#projects" class="btn">View My Projects</a>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>
+            As a seasoned Salesforce Senior Project Manager, I bring a robust blend of technical acumen, strategic thinking, and unparalleled leadership to every initiative. My career is marked by a consistent track record of successfully guiding complex Salesforce and nCino implementations, ensuring seamless transitions, maximizing ROI, and fostering strong client relationships. I am passionate about leveraging cutting-edge cloud technologies to solve intricate business challenges and drive organizational growth.
+        </p>
+    </section>
+
+    <section id="capabilities" class="container">
+        <h2>Core Capabilities of an Outstanding Salesforce Project Manager</h2>
+        <div class="capabilities-grid">
+            <div class="capability-item">
+                <h3>Salesforce Ecosystem Mastery</h3>
+                <ul>
+                    <li>In-depth understanding of Salesforce Clouds (Sales, Service, Experience, Marketing, etc.)</li>
+                    <li>Proficiency in Salesforce release management and best practices</li>
+                    <li>Knowledge of Salesforce architecture, integrations, and data models</li>
+                    <li>Experience with Salesforce configuration, customization, and AppExchange solutions</li>
+                </ul>
+            </div>
+            <div class="capability-item">
+                <h3>nCino Platform Expertise</h3>
+                <ul>
+                    <li>Proven track record in nCino implementation and project leadership</li>
+                    <li>Understanding of nCino's lending and banking solutions</li>
+                    <li>Ability to navigate nCino's specific project lifecycle and dependencies</li>
+                    <li>Experience with nCino UAT and deployment strategies</li>
+                </ul>
+            </div>
+            <div class="capability-item">
+                <h3>Advanced Project Management</h3>
+                <ul>
+                    <li>Mastery of Agile (Scrum, Kanban), Waterfall, and Hybrid methodologies</li>
+                    <li>PMP, CSM, or equivalent certifications</li>
+                    <li>Expertise in project planning, execution, monitoring, and control</li>
+                    <li>Proficient in project management tools (Jira, Asana, Azure DevOps, SmartSheet)</li>
+                </ul>
+            </div>
+            <div class="capability-item">
+                <h3>Strategic Leadership & Stakeholder Management</h3>
+                <ul>
+                    <li>Exceptional client communication, negotiation, and expectation management</li>
+                    <li>Proven ability to manage diverse stakeholder groups (executives, technical teams, end-users)</li>
+                    <li>Strong leadership in motivating and guiding cross-functional teams</li>
+                    <li>Conflict resolution and proactive problem-solving</li>
+                </ul>
+            </div>
+            <div class="capability-item">
+                <h3>Requirements & Scope Management</h3>
+                <ul>
+                    <li>Skilled in translating complex business needs into clear technical requirements</li>
+                    <li>User story development, backlog grooming, and sprint planning</li>
+                    <li>Rigorous scope definition and control to prevent scope creep</li>
+                    <li>Facilitation of workshops and discovery sessions</li>
+                </ul>
+            </div>
+            <div class="capability-item">
+                <h3>Risk, Budget & Resource Optimization</h3>
+                <ul>
+                    <li>Proactive identification, assessment, and mitigation of project risks</li>
+                    <li>Effective budget planning, tracking, and cost control</li>
+                    <li>Strategic allocation and management of project resources</li>
+                    <li>Ensuring project deliverables meet quality standards and timelines</li>
+                </ul>
+            </div>
+            <div class="capability-item">
+                <h3>Change Management & Adoption</h3>
+                <ul>
+                    <li>Designing and implementing robust change management strategies</li>
+                    <li>Facilitating user adoption and training programs</li>
+                    <li>Ensuring smooth organizational transitions post-implementation</li>
+                    <li>Measuring and reporting on adoption success metrics</li>
+                </ul>
+            </div>
+            <div class="capability-item">
+                <h3>Technical Acumen & Problem Solving</h3>
+                <ul>
+                    <li>Ability to bridge the gap between business and technical teams</li>
+                    <li>Understanding of Salesforce integrations (APIs, middleware)</li>
+                    <li>Proactive identification and resolution of project impediments and blockers</li>
+                    <li>Analytical thinking for complex solution design challenges</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>My Portfolio Projects</h2>
+        <p>Below are examples of projects I've led or will be showcasing, demonstrating my expertise in Salesforce and nCino.</p>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-card-header">
+                    Enterprise Sales Cloud Transformation <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="project-card-body">
+                    <p>Orchestrated a large-scale Salesforce Sales Cloud implementation for a multi-national corporation, streamlining their sales processes and integrating with existing ERP systems. Focused on enhancing lead-to-cash cycles and improving sales team productivity.</p>
+                    <div class="project-card-skills">
+                        <span>Salesforce Sales Cloud</span>
+                        <span>Integration</span>
+                        <span>Agile Scrum</span>
+                        <span>Data Migration</span>
+                        <span>Change Management</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-card-header">
+                    nCino Loan Origination System Deployment <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="project-card-body">
+                    <p>Led the end-to-end implementation of nCino's Loan Origination System for a regional bank, automating their commercial lending process. This project involved extensive customization, data migration, and user training to ensure high adoption rates.</p>
+                    <div class="project-card-skills">
+                        <span>nCino Platform</span>
+                        <span>Commercial Lending</span>
+                        <span>System Integration</span>
+                        <span>UAT Management</span>
+                        <span>Stakeholder Management</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-card-header">
+                    Service Cloud & Omni-Channel Implementation <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="project-card-body">
+                    <p>Directed the rollout of Salesforce Service Cloud and Omni-Channel routing for a customer service center, significantly improving case resolution times and agent efficiency. Implemented CTI integration and custom dashboards for performance monitoring.</p>
+                    <div class="project-card-skills">
+                        <span>Salesforce Service Cloud</span>
+                        <span>Omni-Channel</span>
+                        <span>CTI Integration</span>
+                        <span>Process Optimization</span>
+                        <span>User Training</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-card-header">
+                    Salesforce Experience Cloud Portal Build <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="project-card-body">
+                    <p>Managed the creation of a customer-facing portal using Salesforce Experience Cloud, providing self-service options and enhancing customer engagement. Involved custom component development and seamless data synchronization.</p>
+                    <div class="project-card-skills">
+                        <span>Salesforce Experience Cloud</span>
+                        <span>Customer Portal</span>
+                        <span>Community Cloud</span>
+                        <span>Custom Development</span>
+                        <span>UX/UI Focus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name Here. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="mailto:your.email@example.com">Email Me</a>
+                <a href="#about">About</a>
+                <a href="#capabilities">Capabilities</a>
+                <a href="#projects">Projects</a>
+            </div>
+            <p>Connect with me on LinkedIn (Add your LinkedIn URL here)</p>
+        </div>
+    </footer>
+
+</body>
+</html>
