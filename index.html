@@ -1,34 +1,20 @@
-Here's a cool and responsive HTML portfolio template for a Salesforce Senior Project Manager, incorporating your profile picture and highlighting key capabilities and future project areas.
-HTML
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salesforce Senior Project Manager - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Your Name - Salesforce Senior Project Manager Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #0070D2; /* Salesforce Blue */
-            --secondary-color: #16325C; /* Darker Blue */
-            --accent-color: #B0E0E6; /* Light Blue */
-            --text-color: #333;
-            --light-grey: #f4f4f4;
-            --white: #ffffff;
-            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
+        /* General Styles */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--light-grey);
-            color: var(--text-color);
+            background-color: #f4f7f6;
+            color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -37,558 +23,500 @@ HTML
 
         /* Header */
         header {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 20px 0;
-            box-shadow: var(--shadow);
+            background-color: #2c3e50; /* Dark blue/grey */
+            color: #ecf0f1; /* Light grey */
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
         header h1 {
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            letter-spacing: 1px;
+            font-size: 2.8em;
+            letter-spacing: 1.5px;
         }
-
         header p {
-            font-size: 1.1em;
-            margin-top: 5px;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 50px 20px;
-            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-            color: var(--white);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 200px;
-            height: 200px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transform: rotate(45deg);
-            z-index: 0;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -70px;
-            right: -70px;
-            width: 150px;
-            height: 150px;
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
-            z-index: 0;
-        }
-
-        .hero-content {
-            z-index: 1;
-            max-width: 800px;
-        }
-
-        .profile-picture {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--white);
-            box-shadow: var(--shadow);
-            margin-bottom: 25px;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-picture:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        .hero h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
+            font-size: 1.3em;
+            margin-top: 10px;
             opacity: 0.9;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
+        /* Navigation - Beyond Responsive (JS for active states) */
+        nav {
+            background-color: #34495e; /* Slightly lighter blue/grey */
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky; /* Sticky nav */
+            top: 0;
+            z-index: 1000;
         }
-
-        .btn:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #3f6e9f; /* A Salesforce-like blue */
+            color: #ffffff;
         }
 
         /* Section Styling */
         section {
-            padding: 60px 0;
+            padding: 60px 20px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        section:nth-of-type(even) {
+            background-color: #fcfcfc;
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
             text-align: center;
-        }
-
-        section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
             margin-bottom: 40px;
-            color: var(--secondary-color);
             position: relative;
-            display: inline-block;
         }
-
-        section h2::after {
+        h2::after {
             content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-            width: 70px;
+            display: block;
+            width: 80px;
             height: 4px;
-            background-color: var(--primary-color);
+            background-color: #3f6e9f;
+            margin: 15px auto 0;
             border-radius: 2px;
         }
 
-        /* About & Capabilities */
-        #about, #capabilities {
-            background-color: var(--white);
-            padding-top: 80px;
-        }
-
-        #about p {
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            font-size: 1.1em;
-            color: #555;
-        }
-
+        /* Core Capabilities */
         .capabilities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 50px;
+            text-align: center;
         }
-
         .capability-item {
-            background-color: var(--white);
+            background-color: #ecf0f1;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
-            border-top: 5px solid var(--primary-color);
         }
-
         .capability-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
-
         .capability-item h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
+            color: #3f6e9f;
             margin-top: 0;
             font-size: 1.4em;
         }
-
-        .capability-item ul {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0 0 0;
-        }
-
-        .capability-item ul li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 8px;
-            font-size: 1em;
-            color: #444;
-        }
-
-        .capability-item ul li::before {
-            content: '✔️';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-size: 1.1em;
-            top: 0;
+        .capability-item p {
+            font-size: 0.95em;
+            color: #555;
         }
 
         /* Projects */
-        #projects {
-            background-color: var(--light-grey);
-            padding-bottom: 80px;
-        }
-
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 50px;
         }
-
         .project-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             overflow: hidden;
-            text-align: left;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
         }
-
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
-
-        .project-card-header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 20px;
-            font-family: 'Montserrat', sans-serif;
+        .project-card h3 {
+            background-color: #3f6e9f;
+            color: #ffffff;
+            padding: 15px 20px;
+            margin: 0;
             font-size: 1.5em;
         }
-
-        .project-card-body {
+        .project-content {
             padding: 20px;
             flex-grow: 1;
         }
-
-        .project-card-body p {
-            font-size: 0.95em;
-            color: #555;
+        .project-content p {
             margin-bottom: 15px;
+            font-size: 0.95em;
         }
-
-        .project-card-skills span {
+        .project-content ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            border-top: 1px dashed #eee;
+            padding-top: 15px;
+        }
+        .project-content ul li {
+            background-color: #e0e9f0; /* Lighter blue for skills */
             display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--secondary-color);
-            padding: 6px 12px;
+            padding: 5px 12px;
+            margin: 5px 5px 5px 0;
             border-radius: 20px;
             font-size: 0.85em;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-weight: 600;
+            color: #2c3e50;
+            font-weight: 500;
         }
-
-        .coming-soon-badge {
-            background-color: #ffc107; /* Amber */
-            color: #333;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8em;
-            font-weight: bold;
-            display: inline-block;
-            margin-left: 10px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 30px 0;
-            text-align: center;
+        .project-status {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
             font-size: 0.9em;
         }
 
-        footer p {
-            margin: 0;
-            padding-bottom: 10px;
+        /* Skills */
+        .skills-container {
+            text-align: center;
         }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .skill-bubble {
+            background-color: #3f6e9f;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .skill-bubble:hover {
+            background-color: #2c3e50;
+            transform: translateY(-3px);
+        }
+        /* Specific skill highlights */
+        .skill-bubble.salesforce { background-color: #1798c1; } /* Salesforce blue */
+        .skill-bubble.ncino { background-color: #007bff; } /* nCino blue (example) */
+        .skill-bubble.pm { background-color: #5cb85c; } /* Project Management green */
 
-        .footer-links a {
-            color: var(--white);
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #ecf0f1;
             text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
 
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Responsive Design */
+        /* Responsive Design - Beyond basic, adjusting layouts */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
             }
-
-            .hero h2 {
-                font-size: 2.2em;
-            }
-
-            .hero p {
+            header p {
                 font-size: 1em;
             }
-
-            .profile-picture {
-                width: 150px;
-                height: 150px;
+            nav ul li {
+                margin: 5px 10px; /* Tighter nav on smaller screens */
             }
-
-            section h2 {
-                font-size: 2em;
-            }
-
             .capabilities-grid, .project-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Stack columns on small screens */
             }
-
-            .capability-item {
-                padding: 25px;
+            section {
+                padding: 40px 15px;
             }
-
-            .project-card-header {
-                font-size: 1.3em;
+            h2 {
+                font-size: 1.8em;
             }
         }
 
+        /* Even smaller screens (e.g., mobile landscape) */
         @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .hero h2 {
-                font-size: 1.8em;
-            }
-
-            .hero p {
+            nav ul li a {
                 font-size: 0.9em;
+                padding: 6px 10px;
             }
-
-            .btn {
-                padding: 10px 20px;
+            .skill-bubble {
                 font-size: 0.9em;
-            }
-
-            section h2 {
-                font-size: 1.8em;
-                margin-bottom: 30px;
-            }
-
-            .capability-item h3 {
-                font-size: 1.2em;
-            }
-
-            .project-card-header {
-                font-size: 1.1em;
+                padding: 8px 15px;
             }
         }
     </style>
 </head>
 <body>
-
     <header>
         <div class="container">
-            <h1>Your Name Here</h1>
-            <p>Salesforce Senior Project Manager</p>
+            <h1>[Your Full Name]</h1>
+            <p>Senior Salesforce & nCino Project Manager</p>
+            <p>Driving Success in Complex Ecosystems</p>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <img src="Profile picture.jpeg" alt="Profile Picture" class="profile-picture">
-            <h2>Driving Success in Complex Salesforce Ecosystems</h2>
-            <p>Leveraging deep expertise in Salesforce and nCino to deliver transformative projects and exceed client expectations through exceptional project leadership.</p>
-            <a href="#projects" class="btn">View My Projects</a>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about" class="active">About Me</a></li>
+                <li><a href="#capabilities">Core Capabilities</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#future-projects">Future Endeavors</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </section>
+    </nav>
 
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>
-            As a seasoned Salesforce Senior Project Manager, I bring a robust blend of technical acumen, strategic thinking, and unparalleled leadership to every initiative. My career is marked by a consistent track record of successfully guiding complex Salesforce and nCino implementations, ensuring seamless transitions, maximizing ROI, and fostering strong client relationships. I am passionate about leveraging cutting-edge cloud technologies to solve intricate business challenges and drive organizational growth.
-        </p>
-    </section>
-
-    <section id="capabilities" class="container">
-        <h2>Core Capabilities of an Outstanding Salesforce Project Manager</h2>
-        <div class="capabilities-grid">
-            <div class="capability-item">
-                <h3>Salesforce Ecosystem Mastery</h3>
-                <ul>
-                    <li>In-depth understanding of Salesforce Clouds (Sales, Service, Experience, Marketing, etc.)</li>
-                    <li>Proficiency in Salesforce release management and best practices</li>
-                    <li>Knowledge of Salesforce architecture, integrations, and data models</li>
-                    <li>Experience with Salesforce configuration, customization, and AppExchange solutions</li>
-                </ul>
-            </div>
-            <div class="capability-item">
-                <h3>nCino Platform Expertise</h3>
-                <ul>
-                    <li>Proven track record in nCino implementation and project leadership</li>
-                    <li>Understanding of nCino's lending and banking solutions</li>
-                    <li>Ability to navigate nCino's specific project lifecycle and dependencies</li>
-                    <li>Experience with nCino UAT and deployment strategies</li>
-                </ul>
-            </div>
-            <div class="capability-item">
-                <h3>Advanced Project Management</h3>
-                <ul>
-                    <li>Mastery of Agile (Scrum, Kanban), Waterfall, and Hybrid methodologies</li>
-                    <li>PMP, CSM, or equivalent certifications</li>
-                    <li>Expertise in project planning, execution, monitoring, and control</li>
-                    <li>Proficient in project management tools (Jira, Asana, Azure DevOps, SmartSheet)</li>
-                </ul>
-            </div>
-            <div class="capability-item">
-                <h3>Strategic Leadership & Stakeholder Management</h3>
-                <ul>
-                    <li>Exceptional client communication, negotiation, and expectation management</li>
-                    <li>Proven ability to manage diverse stakeholder groups (executives, technical teams, end-users)</li>
-                    <li>Strong leadership in motivating and guiding cross-functional teams</li>
-                    <li>Conflict resolution and proactive problem-solving</li>
-                </ul>
-            </div>
-            <div class="capability-item">
-                <h3>Requirements & Scope Management</h3>
-                <ul>
-                    <li>Skilled in translating complex business needs into clear technical requirements</li>
-                    <li>User story development, backlog grooming, and sprint planning</li>
-                    <li>Rigorous scope definition and control to prevent scope creep</li>
-                    <li>Facilitation of workshops and discovery sessions</li>
-                </ul>
-            </div>
-            <div class="capability-item">
-                <h3>Risk, Budget & Resource Optimization</h3>
-                <ul>
-                    <li>Proactive identification, assessment, and mitigation of project risks</li>
-                    <li>Effective budget planning, tracking, and cost control</li>
-                    <li>Strategic allocation and management of project resources</li>
-                    <li>Ensuring project deliverables meet quality standards and timelines</li>
-                </ul>
-            </div>
-            <div class="capability-item">
-                <h3>Change Management & Adoption</h3>
-                <ul>
-                    <li>Designing and implementing robust change management strategies</li>
-                    <li>Facilitating user adoption and training programs</li>
-                    <li>Ensuring smooth organizational transitions post-implementation</li>
-                    <li>Measuring and reporting on adoption success metrics</li>
-                </ul>
-            </div>
-            <div class="capability-item">
-                <h3>Technical Acumen & Problem Solving</h3>
-                <ul>
-                    <li>Ability to bridge the gap between business and technical teams</li>
-                    <li>Understanding of Salesforce integrations (APIs, middleware)</li>
-                    <li>Proactive identification and resolution of project impediments and blockers</li>
-                    <li>Analytical thinking for complex solution design challenges</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="container">
-        <h2>My Portfolio Projects</h2>
-        <p>Below are examples of projects I've led or will be showcasing, demonstrating my expertise in Salesforce and nCino.</p>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-card-header">
-                    Enterprise Sales Cloud Transformation <span class="coming-soon-badge">Coming Soon</span>
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>As a **highly accomplished and professional Salesforce Senior Project Manager**, I bring over [X] years of dedicated experience leading complex, enterprise-level CRM implementations and digital transformation initiatives. My expertise is deeply rooted in the **Salesforce ecosystem**, where I excel at bridging the gap between business objectives and technical realities.</p>
+            <p>I have a proven track record of delivering projects on time, within budget, and to the highest quality standards, consistently exceeding stakeholder expectations. My approach is characterized by meticulous planning, proactive risk management, clear communication, and a steadfast commitment to fostering collaborative team environments. I thrive in dynamic environments, leveraging agile methodologies and my strong leadership skills to navigate challenges and drive successful outcomes.</p>
+        </section>
+        ---
+        <section id="capabilities">
+            <h2>Core Capabilities</h2>
+            <div class="capabilities-grid">
+                <div class="capability-item">
+                    <h3>Strategic Salesforce Leadership</h3>
+                    <p>Expert in aligning Salesforce strategies with business goals, driving vision from conception to successful deployment across various clouds (Sales, Service, Experience, Financial Services Cloud).</p>
                 </div>
-                <div class="project-card-body">
-                    <p>Orchestrated a large-scale Salesforce Sales Cloud implementation for a multi-national corporation, streamlining their sales processes and integrating with existing ERP systems. Focused on enhancing lead-to-cash cycles and improving sales team productivity.</p>
-                    <div class="project-card-skills">
-                        <span>Salesforce Sales Cloud</span>
-                        <span>Integration</span>
-                        <span>Agile Scrum</span>
-                        <span>Data Migration</span>
-                        <span>Change Management</span>
+                <div class="capability-item">
+                    <h3>Complex Program Management</h3>
+                    <p>Proficient in managing large-scale, multi-stream projects with intricate dependencies and diverse stakeholder groups, ensuring cohesive project execution.</p>
+                </div>
+                <div class="capability-item">
+                    <h3>nCino Implementation Mastery</h3>
+                    <p>Deep understanding and practical experience in leading successful nCino implementations, navigating its specific complexities and integrations for financial services clients.</p>
+                </div>
+                <div class="capability-item">
+                    <h3>Agile & Waterfall Methodologies</h3>
+                    <p>Adaptable and certified in both Agile (Scrum, Kanban) and Waterfall methodologies, selecting and applying the most effective approach for each unique project context.</p>
+                </div>
+                <div class="capability-item">
+                    <h3>Risk Management & Mitigation</h3>
+                    <p>Proactive identification, assessment, and mitigation of project risks, ensuring minimal disruption and consistent progress.</p>
+                </div>
+                <div class="capability-item">
+                    <h3>Stakeholder Engagement & Communication</h3>
+                    <p>Exceptional ability to engage, manage, and communicate effectively with executives, technical teams, and end-users, fostering trust and transparency.</p>
+                </div>
+            </div>
+        </section>
+        ---
+        <section id="projects">
+            <h2>Key Projects Delivered</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Enterprise Salesforce Sales Cloud Rollout</h3>
+                    <div class="project-content">
+                        <p>Led a comprehensive **Salesforce Sales Cloud implementation** for a Fortune 500 company, integrating with existing ERP systems and migrating over 500,000 legacy records. Achieved 15% increase in sales efficiency post-launch.</p>
+                        <p><strong>Impact:</strong> Streamlined sales processes, enhanced data accuracy, and improved lead-to-opportunity conversion rates.</p>
+                        <ul>
+                            <li>Salesforce Sales Cloud</li>
+                            <li>Data Migration</li>
+                            <li>System Integration</li>
+                            <li>Agile Scrum</li>
+                            <li>Change Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>nCino Loan Origination Platform Implementation</h3>
+                    <div class="project-content">
+                        <p>Successfully managed the end-to-end implementation of **nCino's Commercial Loan Origination** platform for a regional bank, automating key lending processes and improving compliance.</p>
+                        <p><strong>Impact:</strong> Reduced loan processing time by 30% and improved regulatory audit readiness.</p>
+                        <ul>
+                            <li>nCino Loan Origination</li>
+                            <li>Financial Services Cloud</li>
+                            <li>Process Automation</li>
+                            <li>Vendor Management</li>
+                            <li>Regulatory Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Salesforce Service Cloud & CTI Integration</h3>
+                    <div class="project-content">
+                        <p>Directed the implementation of **Salesforce Service Cloud** including advanced CTI (Computer Telephony Integration) for a customer support center, enhancing agent productivity and customer satisfaction.</p>
+                        <p><strong>Impact:</strong> Decreased average handle time by 20% and increased CSAT scores by 10 points.</p>
+                        <ul>
+                            <li>Salesforce Service Cloud</li>
+                            <li>CTI Integration</li>
+                            <li>Omni-Channel</li>
+                            <li>Call Center Operations</li>
+                            <li>Performance Metrics</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="project-card-header">
-                    nCino Loan Origination System Deployment <span class="coming-soon-badge">Coming Soon</span>
+        </section>
+        ---
+        <section id="future-projects">
+            <h2>Future Portfolio Projects & Strategic Interests</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>AI-Driven Salesforce Adoption Initiatives</h3>
+                    <div class="project-content">
+                        <p>Exploring and planning projects focused on leveraging **Salesforce Einstein AI and Generative AI** to enhance user adoption, automate routine tasks, and provide predictive analytics for CRM users.</p>
+                        <p class="project-status">**Status:** Research & Strategy Development</p>
+                        <ul>
+                            <li>Salesforce Einstein</li>
+                            <li>Generative AI</li>
+                            <li>User Adoption</li>
+                            <li>Process Optimization</li>
+                            <li>Data Science Principles</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="project-card-body">
-                    <p>Led the end-to-end implementation of nCino's Loan Origination System for a regional bank, automating their commercial lending process. This project involved extensive customization, data migration, and user training to ensure high adoption rates.</p>
-                    <div class="project-card-skills">
-                        <span>nCino Platform</span>
-                        <span>Commercial Lending</span>
-                        <span>System Integration</span>
-                        <span>UAT Management</span>
-                        <span>Stakeholder Management</span>
+                <div class="project-card">
+                    <h3>Expanded nCino Digital Banking Solutions</h3>
+                    <div class="project-content">
+                        <p>Interest in spearheading projects that extend **nCino's capabilities** beyond traditional lending, into areas like deposit account opening, treasury management, or broader digital customer onboarding experiences.</p>
+                        <p class="project-status">**Status:** Market Analysis & Partnership Scouting</p>
+                        <ul>
+                            <li>nCino Beyond Lending</li>
+                            <li>Digital Onboarding</li>
+                            <li>API Integrations</li>
+                            <li>FinTech Innovation</li>
+                            <li>Customer Experience (CX)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Cross-Cloud Salesforce Program Leadership</h3>
+                    <div class="project-content">
+                        <p>Aiming to lead large-scale programs that span multiple Salesforce Clouds (e.g., Marketing Cloud, Health Cloud, Commerce Cloud) to create a truly unified 360-degree customer view for complex organizations.</p>
+                        <p class="project-status">**Status:** Skill Enhancement & Networking</p>
+                        <ul>
+                            <li>Salesforce Multi-Cloud</li>
+                            <li>Program Governance</li>
+                            <li>Enterprise Architecture</li>
+                            <li>Data Unification</li>
+                            <li>Strategic Roadmapping</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="project-card-header">
-                    Service Cloud & Omni-Channel Implementation <span class="coming-soon-badge">Coming Soon</span>
+        </section>
+        ---
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-container">
+                <h3>Salesforce Ecosystem:</h3>
+                <div class="skills-grid">
+                    <span class="skill-bubble salesforce">Sales Cloud</span>
+                    <span class="skill-bubble salesforce">Service Cloud</span>
+                    <span class="skill-bubble salesforce">Experience Cloud</span>
+                    <span class="skill-bubble salesforce">Financial Services Cloud (FSC)</span>
+                    <span class="skill-bubble salesforce">Salesforce CPQ</span>
+                    <span class="skill-bubble salesforce">Pardot / Marketing Cloud</span>
+                    <span class="skill-bubble salesforce">Integrations (MuleSoft, APIs)</span>
+                    <span class="skill-bubble salesforce">Salesforce Lightning</span>
+                    <span class="skill-bubble salesforce">Platform Governance</span>
                 </div>
-                <div class="project-card-body">
-                    <p>Directed the rollout of Salesforce Service Cloud and Omni-Channel routing for a customer service center, significantly improving case resolution times and agent efficiency. Implemented CTI integration and custom dashboards for performance monitoring.</p>
-                    <div class="project-card-skills">
-                        <span>Salesforce Service Cloud</span>
-                        <span>Omni-Channel</span>
-                        <span>CTI Integration</span>
-                        <span>Process Optimization</span>
-                        <span>User Training</span>
-                    </div>
+                <h3 style="margin-top: 40px;">nCino Platform:</h3>
+                <div class="skills-grid">
+                    <span class="skill-bubble ncino">nCino Loan Origination System</span>
+                    <span class="skill-bubble ncino">nCino Treasury Management</span>
+                    <span class="skill-bubble ncino">nCino Deposit Account Opening</span>
+                    <span class="skill-bubble ncino">nCino Configuration</span>
+                    <span class="skill-bubble ncino">nCino Release Management</span>
+                </div>
+                <h3 style="margin-top: 40px;">Project Management & Methodologies:</h3>
+                <div class="skills-grid">
+                    <span class="skill-bubble pm">PMP Certified</span>
+                    <span class="skill-bubble pm">Agile (Scrum Master)</span>
+                    <span class="skill-bubble pm">Waterfall Methodology</span>
+                    <span class="skill-bubble pm">Risk Management</span>
+                    <span class="skill-bubble pm">Budget Management</span>
+                    <span class="skill-bubble pm">Resource Management</span>
+                    <span class="skill-bubble pm">Stakeholder Management</span>
+                    <span class="skill-bubble pm">Change Management</span>
+                    <span class="skill-bubble pm">Vendor Management</span>
+                    <span class="skill-bubble pm">Jira, Asana, Azure DevOps</span>
+                </div>
+                <h3 style="margin-top: 40px;">Leadership & Soft Skills:</h3>
+                <div class="skills-grid">
+                    <span class="skill-bubble">Strategic Planning</span>
+                    <span class="skill-bubble">Cross-Functional Leadership</span>
+                    <span class="skill-bubble">Problem Solving</span>
+                    <span class="skill-bubble">Conflict Resolution</span>
+                    <span class="skill-bubble">Mentoring & Coaching</span>
+                    <span class="skill-bubble">Exceptional Communication</span>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="project-card-header">
-                    Salesforce Experience Cloud Portal Build <span class="coming-soon-badge">Coming Soon</span>
-                </div>
-                <div class="project-card-body">
-                    <p>Managed the creation of a customer-facing portal using Salesforce Experience Cloud, providing self-service options and enhancing customer engagement. Involved custom component development and seamless data synchronization.</p>
-                    <div class="project-card-skills">
-                        <span>Salesforce Experience Cloud</span>
-                        <span>Customer Portal</span>
-                        <span>Community Cloud</span>
-                        <span>Custom Development</span>
-                        <span>UX/UI Focus</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+        ---
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p style="text-align: center;">I'm always open to discussing new opportunities or collaborating on challenging Salesforce and nCino initiatives. Please feel free to reach out!</p>
+            <p style="text-align: center; font-size: 1.2em; font-weight: bold;">
+                Email: <a href="mailto:your.email@example.com">your.email@example.com</a><br>
+                LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a><br>
+                (Optional) Phone: [Your Phone Number]
+            </p>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Your Name Here. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="mailto:your.email@example.com">Email Me</a>
-                <a href="#about">About</a>
-                <a href="#capabilities">Capabilities</a>
-                <a href="#projects">Projects</a>
-            </div>
-            <p>Connect with me on LinkedIn (Add your LinkedIn URL here)</p>
+            <p>&copy; 2025 [Your Name]. All rights reserved. | Built with a focus on Salesforce Project Management Excellence.</p>
         </div>
     </footer>
 
+    <script>
+        // JavaScript for sticky navigation active state (Beyond basic responsiveness)
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll("nav ul li a");
+
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 80; // Adjust for sticky header
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href").includes(current)) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
