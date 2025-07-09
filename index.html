@@ -1,378 +1,403 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Onyi Mofunanya — Salesforce & nCino Senior Project Manager</title>
+/* General Body and Container Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
 
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-    <style>
-        :root {
-            --clr-primary: #0e6ba8; /* ocean blue */
-            --clr-bg: #ffffff;
-            --clr-bg-alt: #f8f9fa;
-            --clr-text: #212529;
-            --clr-accent: #ffc107; /* amber */
-            --radius-lg: 1.25rem;
-            --radius-md: 0.75rem;
-        }
+/* Header Section */
+.header {
+    background: #2c3e50; /* Dark blue-grey */
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
-        /* RESET */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: "Inter", sans-serif;
-            color: var(--clr-text);
-            background-color: var(--clr-bg);
-            line-height: 1.6;
-        }
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        img {
-            max-width: 100%;
-            display: block;
-        }
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
 
-        /* LAYOUT */
-        header {
-            background: linear-gradient(135deg, var(--clr-primary) 0%, #14213d 100%);
-            color: #fff;
-        }
-        .container {
-            width: min(90%, 1200px);
-            margin-inline: auto;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-block: 1rem;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        .nav-links a {
-            font-weight: 500;
-            position: relative;
-        }
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            width: 0;
-            height: 2px;
-            background: var(--clr-accent);
-            transition: width 0.3s ease-in-out;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        /* mobile nav */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer;
-        }
-        .hamburger span {
-            width: 24px;
-            height: 3px;
-            background: #fff;
-        }
-        /* HERO */
-        .hero {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 2rem;
-            align-items: center;
-            padding-block: 3rem 4rem;
-        }
-        .hero img {
-            border-radius: var(--radius-lg);
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border: 4px solid var(--clr-accent);
-        }
-        .hero h1 {
-            font-size: clamp(2rem, 5vw + 1rem, 3rem);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        .hero p {
-            font-size: 1.125rem;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-        /* SECTION HEADINGS */
-        section {
-            padding-block: 4rem 5rem;
-        }
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--clr-primary);
-            position: relative;
-        }
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background: var(--clr-accent);
-        }
-        /* CAPABILITIES GRID */
-        .capabilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1rem 1.5rem;
-        }
-        .capability {
-            background: var(--clr-bg-alt);
-            padding: 1.25rem 1rem 1.25rem 1.25rem;
-            border-radius: var(--radius-md);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.04);
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-        .capability span {
-            flex-shrink: 0;
-            font-size: 1.25rem;
-            color: var(--clr-primary);
-        }
-        /* PROJECTS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .project-card {
-            background: var(--clr-bg-alt);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-        }
-        .project-content {
-            padding: 1.75rem 1.5rem 2rem;
-        }
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--clr-primary);
-        }
-        .project-meta {
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        .project-meta span {
-            background: var(--clr-primary);
-            color: #fff;
-            padding: 0.15rem 0.5rem;
-            border-radius: 0.25rem;
-            margin-right: 0.35rem;
-        }
-        .project-description {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-        .project-tags {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-        }
-        .project-tags li {
-            border: 1px solid var(--clr-primary);
-            color: var(--clr-primary);
-            padding: 0.15rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.75rem;
-        }
-        /* CONTACT */
-        footer {
-            background: #14213d;
-            color: #ffffff;
-            padding-block: 2rem;
-            text-align: center;
-        }
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 
-        /* UTILITIES */
-        .mb-s { margin-bottom: 0.75rem; }
-        .mb-m { margin-bottom: 1rem; }
-        .mb-l { margin-bottom: 1.5rem; }
-        .pill {
-            display: inline-block;
-            background: var(--clr-primary);
-            color: #fff;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
+.profile-info h1 {
+    margin: 10px 0 5px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
 
-        /* MEDIA QUERIES */
-        @media (max-width: 768px) {
-            nav .nav-links {
-                position: absolute;
-                top: 68px;
-                right: 0;
-                flex-direction: column;
-                background: #14213d;
-                width: 200px;
-                padding: 1rem;
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
-            }
-            nav .nav-links.open {
-                transform: translateX(0);
-            }
-            .hamburger { display: flex; }
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero img {
-                justify-self: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- ======= HEADER ======= -->
-    <header>
-        <div class="container">
-            <nav>
-                <h2 style="font-size:1.35rem;font-weight:700;">Onyi&nbsp;Mofunanya</h2>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#capabilities">Capabilities</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span><span></span><span></span>
-                </div>
-            </nav>
+.profile-info .role {
+    font-size: 1.3em;
+    font-weight: 400;
+    color: #ecf0f1; /* Light grey */
+    margin-bottom: 10px;
+}
 
-            <div class="hero" id="about">
-                <!-- 👉🏾 Replace src with the actual relative path to your profile picture  -->
-                <img src="profile.jpg" alt="Onyi Mofunanya Profile Photo" />
-                <div>
-                    <h1>Senior Project Manager<br />Salesforce &amp; nCino Specialist</h1>
-                    <p class="mb-m">Delivering enterprise-scale digital &amp; AI transformation across financial services with a 98% on-time, on-budget success rate.</p>
-                    <span class="pill">Available for Consulting</span>
-                </div>
-            </div>
-        </div>
-    </header>
+.profile-info .tagline {
+    font-size: 1.1em;
+    color: #bdc3c7; /* Lighter grey */
+}
 
-    <!-- ======= CAPABILITIES ======= -->
-    <section id="capabilities">
-        <div class="container">
-            <h2 class="section-title">Core Capabilities</h2>
-            <div class="capabilities-grid">
-                <div class="capability"><span>✔︎</span><p>End‑to‑End Program &amp; Project Management (Agile, Waterfall, Hybrid)</p></div>
-                <div class="capability"><span>✔︎</span><p>Salesforce Clouds – Sales, Service, Experience &amp; Platform App Builder</p></div>
-                <div class="capability"><span>✔︎</span><p>nCino Commercial &amp; Retail Banking Implementation</p></div>
-                <div class="capability"><span>✔︎</span><p>AI Enablement &amp; Data‑Driven Insights (Einstein, Predictive Analytics)</p></div>
-                <div class="capability"><span>✔︎</span><p>Stakeholder &amp; Executive Engagement across Regulated Environments</p></div>
-                <div class="capability"><span>✔︎</span><p>Budgeting, Forecasting &amp; Financial Governance</p></div>
-                <div class="capability"><span>✔︎</span><p>Risk, Compliance &amp; Change Management</p></div>
-                <div class="capability"><span>✔︎</span><p>Cross‑Functional Team Leadership &amp; Coaching</p></div>
-                <div class="capability"><span>✔︎</span><p>Solution Architecture &amp; Integration Oversight (APIs, Middleware)</p></div>
-                <div class="capability"><span>✔︎</span><p>Quality Assurance, UAT Coordination &amp; Production Cut‑over</p></div>
-            </div>
-        </div>
-    </section>
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows nav items to wrap on smaller screens */
+    gap: 25px; /* Space between nav items */
+}
 
-    <!-- ======= PROJECTS ======= -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Selected Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <article class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Commercial Lending Digitization — Maple Bank</h3>
-                        <p class="project-meta"><span>nCino</span><span>Salesforce</span><span>12 mos</span></p>
-                        <p class="project-description">Led a cross‑functional team to implement nCino’s Commercial Banking LOS integrated with Salesforce Sales Cloud &amp; DocuSign for a tier‑1 Canadian bank. Delivered digital credit origination, covenant tracking, and automated document generation, reducing loan cycle time by 45%.</p>
-                        <ul class="project-tags">
-                            <li>Agile‑Scrum</li>
-                            <li>Data Migration</li>
-                            <li>Change Management</li>
-                            <li>API Integration</li>
-                        </ul>
-                    </div>
-                </article>
+.nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-                <!-- Project 2 -->
-                <article class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Service Cloud Transformation — BlueWave Credit Union</h3>
-                        <p class="project-meta"><span>Salesforce</span><span>Einstein AI</span><span>8 mos</span></p>
-                        <p class="project-description">Migrated legacy ticketing to Salesforce Service Cloud with Einstein Bots and Omni‑Channel routing. Implemented knowledge base, CTI integration, and CSAT analytics achieving a 30% reduction in case resolution time and a 25‑point NPS uplift.</p>
-                        <ul class="project-tags">
-                            <li>Service Cloud</li>
-                            <li>Einstein Bots</li>
-                            <li>CTI</li>
-                            <li>NPS Improvement</li>
-                        </ul>
-                    </div>
-                </article>
+.nav ul li a:hover,
+.nav ul li a:focus {
+    background-color: #34495e; /* Slightly darker blue-grey */
+    color: #fff;
+}
 
-                <!-- Project 3 -->
-                <article class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">AI‑Driven Retail Loan Origination — Sunrise Bank</h3>
-                        <p class="project-meta"><span>nCino</span><span>AI</span><span>10 mos</span></p>
-                        <p class="project-description">Delivered an AI‑enabled retail lending platform leveraging nCino Retail Banking and Salesforce Einstein Discovery. Automated credit decisioning, integrated fraud checks, and provided predictive analytics dashboards, cutting approval times from 2 days to under 4 hours.</p>
-                        <ul class="project-tags">
-                            <li>Retail Banking</li>
-                            <li>Einstein Discovery</li>
-                            <li>Predictive Scoring</li>
-                            <li>RegTech</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-            <!-- Future Projects Placeholder -->
-            <!-- ⭐ To add more projects, duplicate a .project-card and update content ⭐ -->
-        </div>
-    </section>
+/* Section Styling */
+.section {
+    padding: 60px 0;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
 
-    <!-- ======= CONTACT ======= -->
-    <footer id="contact">
-        <div class="container">
-            <p>📍 Milton, Ontario &nbsp;|&nbsp; 📧 <a href="mailto:onyi.mofunanya84@gmail.com">onyi.mofunanya84@gmail.com</a> &nbsp;|&nbsp; ☎︎ +1 (647) 564‑4994</p>
-            <p>Connect on <a href="https://www.linkedin.com/in/onyinyemofunanya" target="_blank" rel="noreferrer">LinkedIn</a></p>
-        </div>
-    </footer>
+.section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
 
-    <!-- ======= SCRIPTS ======= -->
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("navLinks");
-        hamburger.addEventListener("click", () => navLinks.classList.toggle("open"));
-    </script>
-</body>
-</html>
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #3498db; /* Blue accent */
+    margin: 10px auto 0;
+}
+
+/* About Me Section */
+.about-me p {
+    text-align: justify;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    line-height: 1.7;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.skill-category {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.skill-category h3 {
+    color: #3498db;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95em;
+}
+
+.skill-category ul li:last-child {
+    border-bottom: none;
+}
+
+/* Projects Section */
+.project-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.project-card .project-tags {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.project-card h4 {
+    color: #3498db;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.project-card p, .project-card ul {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.project-card ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.project-card ul li {
+    margin-bottom: 8px;
+}
+
+/* Capabilities Section */
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.capability-item {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.2s ease;
+}
+
+.capability-item:hover {
+    transform: translateY(-5px);
+}
+
+.capability-item h3 {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.capability-item h3 i {
+    color: #3498db;
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+.capability-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.capability-item ul li {
+    padding: 5px 0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+
+/* Footer Section */
+.footer {
+    background: #34495e; /* Darker blue-grey */
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.footer p {
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-info p i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+.contact-info a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3498db;
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: #bdc3c7;
+    margin-top: 30px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 30px 0;
+    }
+
+    .profile-info h1 {
+        font-size: 2em;
+    }
+
+    .profile-info .role {
+        font-size: 1.1em;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav ul li a {
+        padding: 10px 20px;
+        display: block;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+    }
+
+    .skills-grid,
+    .capabilities-grid {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 1.5em;
+    }
+
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .contact-info p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-info h1 {
+        font-size: 1.8em;
+    }
+
+    .profile-info .role {
+        font-size: 1em;
+    }
+
+    .section h2 {
+        font-size: 1.6em;
+    }
+}
